@@ -116,7 +116,7 @@ CREATE TABLE user(
     password VARCHAR(30),
     PRIMARY KEY (user_id)
 );
-
+-- p 
 CREATE TABLE favourite_music(
     music_id INTEGER UNSIGNED,
     user_id INTEGER UNSIGNED
