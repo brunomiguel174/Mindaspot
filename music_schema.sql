@@ -121,6 +121,7 @@ CREATE TABLE favourite_music(
     music_id INTEGER UNSIGNED,
     user_id INTEGER UNSIGNED
 );
+
 ALTER TABLE favourite_music ADD CONSTRAINT PK_favourite_music PRIMARY KEY (music_id, user_id);
 
 CREATE TABLE favourite_artist(
