@@ -315,7 +315,7 @@
         INSERT INTO playlist (name, user_id)
             VALUES(name, user_id);
     END;
-    ​
+
     DROP PROCEDURE IF EXISTS get_all_playlist;
     CREATE PROCEDURE get_all_playlist ()
     BEGIN
@@ -345,7 +345,7 @@
             WHERE
                 playlist_id = update_playlist_id;
     END;
-    ​
+
     DROP PROCEDURE IF EXISTS delete_playlist_PLAYLIST;
     CREATE PROCEDURE delete_playlist_PLAYLIST (IN id INTEGER)
     BEGIN
@@ -365,4 +365,19 @@
     BEGIN
         CALL delete_playlist_PLAYLIST (id);
         CALL delete_playlist_PLAYLIST_MUSIC (id);
+    END;
+
+--favourite_music
+    DROP PROCEDURE IF EXISTS add_favourite_music;
+    CREATE PROCEDURE add_favourite(IN music_id INTEGER,IN user_id INTEGER)
+    BEGIN
+        UPDATE favourite_music
+        INSERT INTO add_favourite(music_id,user_id) values (music_id,user_id);
+    END;
+
+
+    DROP PROCEDURE IF EXISTS delete_favourite_music;
+    CREATE PROCEDURE delete_favourite_music(IN id INTEGER, IN id_user INTEGER)
+    BEGIN
+        DELETE FROM favourite_music where music_id = id AND user_id = id_user;
     END;
